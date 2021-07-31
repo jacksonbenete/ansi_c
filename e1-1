@@ -1,0 +1,35 @@
+# How to compile on macOS
+On macOS you don't need to install anything.
+
+cc(1) is the (UNIX) `C Compiler`, as macOS is a UNIX compliant
+operating system, it also have a cc(1) natively shipped with
+the operating system.
+
+cc(1) in macOS is the CLang compiler, which is a driver for a
+collection of integrated tools for various stages of a compilation.
+You can know more about CLang in the man pages `man cc`.
+
+As CLang is a driver, it will complete a series of compilation
+steps automatically and, unless an error shows up, will provide
+you with an Mach-O file named "a.out".
+
+# Running a C program on macOS
+You just need to:
+
+```
+cc hello.c
+```
+
+CLang will do all the job and returns an executable (Mach-O).
+Then you can execute it like:
+
+```
+./a.out
+```
+
+If an error occurs you might need to turn the file executable:
+
+```
+chmod -x a.out
+./a.out
+```
