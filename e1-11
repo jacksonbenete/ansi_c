@@ -1,0 +1,12 @@
+To test the word count (wc.c) program I should stablish some basic 
+test cases, such as an empty file. Then, if there are 'if' statements
+in our program it could be a good idea to test if those statements
+are working.
+
+- Empty file -> should return 0 0 0
+- File without blanks, newlines and tabs -> should return 0 0 1
+- File with newlines -> should return x, y, z
+- File with tabs only -> should return 0, 0, x
+- File with characters and tabs only -> 0, x, y
+
+And so on...
