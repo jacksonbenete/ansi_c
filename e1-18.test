@@ -1,0 +1,41 @@
+cc e1-18v2.c
+
+echo "\ntest: trailing spaces file"
+echo "this is a file with four trailing spaces    " > in
+echo "this is a file with four trailing spaces" > out
+
+./a.out < in > testfile1e18
+diff -s testfile1e18 out
+wc in
+wc testfile1e18
+wc out
+
+echo "\ntest: no trailing spaces"
+echo "this file have no trailing spaces" > in
+echo "this file have no trailing spaces" > out
+
+./a.out < in > testfile1e18
+diff -s testfile1e18 out
+wc in
+wc testfile1e18
+wc out
+
+echo "\ntest: remove completely blank lines"
+echo "first line\n\n\nsecond line" > in
+echo "first line\nsecond line" > out
+
+./a.out < in > testfile1e18
+diff -s testfile1e18 out
+wc in
+wc testfile1e18
+wc out
+
+echo "\ntest: no trailing tabs"
+echo "this is a file containing three tabs\t\t\t" > in
+echo "this is a file containing three tabs" > out
+
+./a.out < in > testfile1e18
+diff -s testfile1e18 out
+wc in
+wc testfile1e18
+wc out
